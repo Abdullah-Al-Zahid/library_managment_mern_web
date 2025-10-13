@@ -30,9 +30,6 @@ CLIENT can do -
 4. Using MongoDB: v6.0.6
    Using Mongosh: v2.0.2
 
-## Demo
-
-![](https://mraalu.pythonanywhere.com/media/project/LMS.gif)
 
 ## Documentation
 
@@ -113,4 +110,4 @@ Starter Login Credentials : (Make sure to import database collections i.e. userd
 
 **Backend :** Node, Express, MongoDB
 
-#### Developed By :- [@MrAalu](https://www.github.com/MrAalu)
+#### Developed By :- [@zahid](https://github.com/Abdullah-Al-Zahid)
