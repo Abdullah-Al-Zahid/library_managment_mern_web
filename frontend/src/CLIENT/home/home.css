@@ -42,3 +42,60 @@
     margin-bottom: 1rem;
   }
 }
+
+/* Styling for the new About Library section */
+.home-main-div .container.my-5 {
+  padding: 4rem 0; /* More vertical padding */
+}
+
+.home-main-div .container.my-5 h2 {
+  color: #2c3e50; /* Darker heading color */
+  font-weight: bold;
+  font-size: 2.8rem; /* Larger heading */
+  margin-bottom: 1.5rem;
+}
+
+.home-main-div .container.my-5 p {
+  color: #555;
+  line-height: 1.8; /* Increased line height for readability */
+  font-size: 1.1rem;
+}
+
+.home-main-div .container.my-5 img {
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.home-main-div .container.my-5 img:hover {
+  transform: scale(1.03); /* Subtle zoom on hover */
+}
+
+/* Styling for the new About Library section */
+.home-main-div .container.my-5 {
+  padding: 4rem 0; /* More vertical padding */
+}
+
+.home-main-div .container.my-5 h2 {
+  color: #2c3e50; /* Darker heading color */
+  font-weight: bold;
+  font-size: 2.8rem; /* Larger heading */
+  margin-bottom: 1.5rem;
+}
+
+.home-main-div .container.my-5 p {
+  color: #555;
+  line-height: 1.8; /* Increased line height for readability */
+  font-size: 1.1rem;
+}
+
+.home-main-div .container.my-5 img {
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.home-main-div .container.my-5 img:hover {
+  transform: scale(1.03); /* Subtle zoom on hover */
+}
+

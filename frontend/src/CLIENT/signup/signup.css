@@ -1,85 +1,132 @@
 /* LOCAL CSS Variables */
 .signup-maindiv {
-  --color-login-button: #4c77af;
-  --color-login-button-hover: #6fa0e0;
-  --color-font-primary: black;
-  --color-font-secondary: white;
-
-  --color-faded: #555;
-  --color-faded-white: rgb(202, 202, 202);
-
-  --color-signup-button: rgb(72, 177, 98);
-  --color-signup-button-hover: rgb(99, 190, 148);
-
-  --color-background: rgb(253, 252, 234);
+  --color-primary-gradient-start: #4facfe;
+  --color-primary-gradient-end: #00f2fe;
+  --color-secondary-button: #28a745;
+  --color-secondary-button-hover: #218838;
+  --color-font-light: #ffffff;
+  --color-font-dark: #333;
+  --color-border-light: #e0e0e0;
+  --color-background-light: #f8f9fa;
 }
 
 /* <-----------------------------------------------------------------> */
 
-/* Main DIV ko CSS */
 .signup-maindiv {
   width: 100%;
-  max-width: 40rem;
-  margin: 1rem auto;
-  box-shadow: 0 0 10px rgb(168, 168, 168);
-  border-radius: 5px;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background: var(--color-background);
+  max-width: 30rem; /* Slightly narrower */
+  margin: 3rem auto 5rem auto; /* Center the form and add 5rem bottom margin */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* More pronounced premium shadow */
+  border-radius: 18px; /* Slightly more rounded corners */
+  padding: 30px; /* Reduced padding */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  background: var(--color-background-light) url('/BannerOne.jpg') no-repeat center center; /* Background image */
+  background-size: cover; /* Cover the entire div */
+  text-align: center; /* Center content */
+  position: relative; /* For overlay */
+  overflow: hidden; /* Hide overflow from image */
 }
 
-/* Upper Div (signup text) ko CSS */
-.signup-upperdiv h1 {
-  text-align: center;
-  font-size: 3rem;
+.signup-maindiv::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay */
+  z-index: 1; /* Place overlay above background image */
+  
+  
 }
+
+.signup-upperdiv, .signup-middlediv, .signup-lowerdiv {
+  position: relative; /* Bring content above overlay */
+  z-index: 2;
+}
+
+.signup-upperdiv h1 {
+  font-size: 2.8rem; /* Slightly smaller, modern heading */
+  color: var(--color-font-dark); /* Dark text */
+  margin-bottom: 2rem; /* Space below heading */
+  animation: fadeInDown 1s ease-out; /* Animation for heading */
+}
+
+.signup-middlediv input, .signup-middlediv button, .signup-lowerdiv p, .signup-lowerdiv button, .signup-lowerdiv a {
+  animation: fadeInUp 1s ease-out forwards; /* Animation for form elements */
+  opacity: 0; /* Start hidden */
+}
+
+.signup-middlediv input:nth-child(1) { animation-delay: 0.2s; }
+.signup-middlediv input:nth-child(2) { animation-delay: 0.4s; }
+/* Add more delays for other inputs if needed */
+.signup-middlediv button { animation-delay: 0.6s; }
+.signup-lowerdiv p { animation-delay: 0.8s; }
+.signup-lowerdiv button { animation-delay: 1s; }
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 
 /* <-----------------------------------------------------------------> */
 
 /* Middle Div CSS */
 .signup-middlediv {
-  margin-top: 2rem;
-  text-align: center;
+  margin-top: 0; /* Adjust margin */
 }
 
 /* Flex boxing the FORM */
 .first-row-form,
 .password-main-div {
   display: flex;
+  gap: 1rem; /* Space between columns */
+  margin-bottom: 1rem; /* Space below rows */
 }
 
-.username-field-div {
-  margin-right: 0.5rem;
-  width: 300px;
-}
-
-.email-field-div {
-  margin-right: 0.5rem;
-  width: 100%;
-}
-
-.password-div-first {
-  margin-right: 0.5rem;
+.username-field-div,
+.email-field-div,
+.password-div-first,
+.password-div-second {
+  flex: 1; /* Distribute space evenly */
+  margin-right: 0; /* Remove individual margins */
 }
 
 /* InputFields Labels CSS */
 .signup-middlediv label {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1rem; /* Modern font size */
   text-align: left;
-  margin-top: 2rem;
+  margin-bottom: 0.5rem; /* Space below label */
+  color: var(--color-font-dark); /* Dark text */
+  font-weight: 500;
 }
 
 /* Input Fields CSS (Username,Password) */
 .signup-middlediv input {
   display: block;
   width: 100%;
-  padding: 0.8rem 1rem;
-  margin-top: 0.5rem;
-  border: 1px solid var(--color-faded-white);
-  border-radius: 0.5rem;
-  font-size: 1.3rem;
-  text-align: left;
+  padding: 12px 15px; /* Increased padding */
+  margin-top: 0; /* Adjust margin */
+  border: 1px solid var(--color-border-light); /* Light border */
+  border-radius: 8px; /* Rounded input fields */
+  font-size: 1.1rem; /* Modern font size */
+  color: var(--color-font-dark); /* Dark text */
+  background-color: #f0f2f5; /* Slightly off-white background */
+  transition: all 0.3s ease; /* Smooth transition for focus */
+}
+
+.signup-middlediv input:focus {
+  border-color: var(--color-primary-gradient-start); /* Highlight on focus */
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2); /* Subtle glow on focus */
+  outline: none;
 }
 
 /* PhoneNumber Input Field ko UP/DOWN ARROW remove gareko  */
@@ -91,26 +138,29 @@ input[type='number']::-webkit-outer-spin-button {
 
 /* signup Button CSS */
 .signup-middlediv button {
-  width: auto;
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
-  background-color: var(--color-login-button);
-  color: var(--color-font-secondary);
+  width: 100%; /* Full width button */
+  padding: 15px; /* Increased padding */
+  margin-top: 2.5rem; /* Space above button */
+  background: linear-gradient(to right, var(--color-primary-gradient-start) 0%, var(--color-primary-gradient-end) 100%); /* Gradient background */
+  color: var(--color-font-light); /* White text */
   border: none;
-  border-radius: 0.5rem;
-  font-size: 1.3rem;
+  border-radius: 8px; /* Rounded button */
+  font-size: 1.2rem; /* Modern font size */
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0px 0px 5px black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
 /* signup Button HOVER Effect */
 .signup-middlediv button:hover {
-  background-color: var(--color-login-button-hover);
+  opacity: 0.9; /* Slight opacity change on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
 
 /* button CLICK huda Effect */
 button:active {
-  translate: 0 1px;
+  transform: translateY(1px); /* Slight press effect */
 }
 
 /* <-----------------------------------------------------------------> */
@@ -118,66 +168,80 @@ button:active {
 /* Lower Div ko CSS (Forgot password && signup button) */
 .signup-lowerdiv {
   display: flex;
-  width: auto;
-  justify-content: center;
-  align-items: baseline;
+  flex-direction: column; /* Stack links vertically */
+  align-items: center; /* Center items */
+  margin-top: 2rem; /* Space above lower div */
 }
 
 /* 'Already have an Account' text CSS  */
 .signup-lowerdiv p {
-  font-weight: bold;
-  font-style: italic;
-  margin-right: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  margin-right: 0; /* Remove margin */
+  margin-bottom: 1rem; /* Space below text */
+  color: var(--color-font-dark); /* Dark text */
 }
 
 /* Signup Button CSS */
 .signup-lowerdiv button {
-  padding: 0.5rem 1rem;
-  background-color: var(--color-signup-button);
-  color: var(--color-font-secondary);
+  width: 100%; /* Full width button */
+  padding: 12px; /* Adjusted padding */
+  background-color: var(--color-secondary-button); /* Secondary button color */
+  color: var(--color-font-light); /* White text */
   border: none;
-  border-radius: 0.5rem;
-  font-size: 1.3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0px 0px 5px black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .signup-lowerdiv button:hover {
-  background-color: var(--color-signup-button-hover);
-  cursor: pointer;
+  background-color: var(--color-secondary-button-hover); /* Darker on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* <-----------------------------------------------------------------> */
 
 /* CSS for responsiveness */
 
-@media (max-width: 480px) {
-  /* Main DIV CSS */
+@media (max-width: 768px) {
   .signup-maindiv {
-    margin: 5rem auto;
+    max-width: 90%;
+    margin: 2rem auto;
+    padding: 30px;
   }
 
-  /* signup Text CSS */
-  .signup-upperdiv h1 {
-    font-size: 3rem;
+  .first-row-form, .password-main-div {
+    flex-direction: column;
+    gap: 0;
   }
 
-  /* Input Fields CSS */
-  .signup-middlediv input[type='text'] {
-    margin-bottom: 2rem;
+  .username-field-div, .email-field-div, .password-div-first, .password-div-second {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
-  /* signup Button CSS */
-  .signup-middlediv button {
+  .signup-middlediv label {
     margin-top: 1rem;
   }
 
-  /* Lower Div CSS ( contains forgot password && signup) */
-  .signup-lowerdiv {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 1.5rem;
+  .signup-upperdiv h1 {
+    font-size: 2.2rem;
+  }
+
+  .signup-middlediv input {
+    font-size: 1rem;
+  }
+
+  .signup-middlediv button {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .signup-lowerdiv p, .signup-lowerdiv button {
+    font-size: 0.95rem;
   }
 }
 
@@ -198,13 +262,20 @@ button:active {
 }
 
 .password-field input {
-  padding-right: 30px; /* Adjust the value based on the icon size and spacing */
+  padding-right: 40px; /* Adjust the value based on the icon size and spacing */
 }
 
 .password-field span {
   position: absolute;
   top: 50%;
-  right: 20px; /* Adjust the value based on the icon size and spacing */
+  right: 15px; /* Adjust the value based on the icon size and spacing */
   transform: translateY(-50%);
-  font-size: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #888; /* Icon color */
+  transition: color 0.2s ease;
+}
+
+.password-field span:hover {
+  color: var(--color-primary-gradient-start); /* Highlight on hover */
 }

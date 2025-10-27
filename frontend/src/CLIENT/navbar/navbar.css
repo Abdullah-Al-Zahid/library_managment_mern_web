@@ -1,5 +1,7 @@
 .navbar {
-  background-color: #e3f2fd;
+  background: linear-gradient(to right, #14373b 0%, #34495e 100%); /* Darker blue-grey gradient */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+  padding: 0.8rem 1.5rem; /* Slightly more padding */
 }
 
 /* Gap between navbar links */
@@ -7,18 +9,55 @@ li {
   margin-right: 0.8rem;
 }
 
+.nav-link {
+  color: #f8f9fa; /* Light text color */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  position: relative; /* Needed for absolute positioning of pseudo-element */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px; /* Position below the text */
+  left: 0;
+  background-color: #ffffff; /* White underline */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+.nav-link:hover {
+  color: #ffffff; /* White on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Subtle glow effect */
+}
+
 #navbar-search-btn {
   box-shadow: none;
-  color: black;
-  background-color: rgba(109, 184, 235, 0.938);
+  color: #2c3e50; /* Dark color from the gradient start */
+  background-color: #ffffff; /* White background */
+  border-radius: 0.3rem; /* Slightly more rounded corners */
+  padding: 0.4rem 0.9rem; /* Adjusted padding */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#navbar-search-btn:hover {
+  background-color: #f0f0f0; /* Lighter white on hover */
+  color: #34495e; /* Dark color from the gradient end */
 }
 
 .a {
   text-decoration: none;
-  color: black;
+  color: #f8f9fa; /* Light text color */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 .a:hover {
-  color: black;
+  color: #ffffff; /* White on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
 }
 
 /* rendering based on if user logged or not */
@@ -30,12 +69,20 @@ li {
   #nav-conditional-rendering {
     display: flex;
     flex-direction: column;
+    color: white;
   }
+  #navbar-title-text {
+    font-size: 1.1rem;
+    color: #f8f9fa; /* Light text color */
+    font-style: italic; /* Make the title italic */
+  }
+  
 }
 
 /* Navbar mobile button */
 #navbar-mobileview-btn {
   box-shadow: none;
+  color: white;
 }
 
 @media screen and (max-width: 380px) {
@@ -45,6 +92,8 @@ li {
 
   #navbar-title-text {
     font-size: 1.1rem;
+    color: #f8f9fa; /* Light text color */
+    font-style: italic; /* Make the title italic */
   }
 }
 

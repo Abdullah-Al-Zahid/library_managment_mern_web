@@ -1,9 +1,39 @@
 #about-heading {
-  border-bottom: 2px solid black;
-  margin-top: 2rem;
+  border-bottom: 2px solid #007bff; /* Subtle blue border for heading */
+  margin-top: 2.5rem;
   width: fit-content;
+  padding-bottom: 0.5rem;
+  color: #333;
+}
+
+.aboutus-bottom-section {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem;
 }
 
 .aboutus-bottom-section p {
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.about-section-item {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 1.5rem; /* Space between items */
+  background-color: #fff;
+}
+
+.about-section-item:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+
+.about-section-item h2 {
+  font-size: 1.6rem;
+  color: #007bff; /* Blue heading */
+  margin-bottom: 0.8rem;
 }

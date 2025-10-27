@@ -36,6 +36,11 @@ const RecommendedBooks = () => {
           <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>
             Recommended Books
           </h1>
+          <div className='text-center mb-4'>
+            <Link to='/books'>
+              <button className='btn btn-primary btn-lg'>View All</button>
+            </Link>
+          </div>
 
           <div className='row mb-3'>
             {latestBooks.length > 0 ? (
@@ -47,6 +52,8 @@ const RecommendedBooks = () => {
                   <div
                     className='col-xxl-3 col-lg-3 col-md-4 col-sm-6 col-6 gy-3'
                     key={_id}
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
                   >
                     <div className='card h-100'>
                       <div className='card-img-top'>

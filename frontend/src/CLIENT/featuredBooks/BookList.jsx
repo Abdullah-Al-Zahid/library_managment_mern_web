@@ -18,6 +18,9 @@ const BookList = (props) => {
           <div
             className='col-xxl-3 col-lg-3 col-md-4 col-sm-6 col-6 gy-3'
             key={_id}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay={`${index * 100}`} /* Staggered animation */
           >
             <div className='card h-100'>
               <div className='card-img-top'>

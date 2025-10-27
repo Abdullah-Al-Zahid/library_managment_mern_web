@@ -15,7 +15,7 @@ const AboutUsPage = () => {
         {about_data.map((items) => {
           const { id, title, description } = items
           return (
-            <Col lg={4} key={id}>
+            <Col lg={4} key={id} className='about-section-item'>
               <h2>{title}</h2>
               <p>{description}</p>
             </Col>

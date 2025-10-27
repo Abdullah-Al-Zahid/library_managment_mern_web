@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import './navbar.css'
+import './navbar.css' // Ensure custom CSS import is present
 
 // Importing all Navbar data's i.e. title,logo,links,etc
 import navbarData from './navbardata'
@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-xl '>
       <div className='container-fluid'>
-        <Link to='/' className='a'>
+        <Link to='/' className='a' data-aos="fade-right" data-aos-duration="1000">
           <img
             src={navbarImage}
             alt='Logo'
@@ -54,7 +54,7 @@ const Navbar = () => {
             {navbarLinks.map((link, index) => {
               const { name, url } = link
               return (
-                <li className='nav-item' key={index}>
+                <li className='nav-item' key={index} data-aos="fade-down" data-aos-duration="1000" data-aos-delay={`${index * 100}`}>
                   <Link to={url} className='nav-link'>
                     {name}
                   </Link>

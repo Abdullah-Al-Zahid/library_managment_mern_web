@@ -114,9 +114,10 @@ const ForgotPassword = () => {
               onChange={(e) => setPhone(e.target.value)}
               required
               name='phone'
-              pattern='9\d{9}'
-              minLength='10'
-              maxLength='10'
+              placeholder='e.g. +8801XXXXXXXXX'
+              pattern='\+8801\d{9}' /* Enforce +8801 followed by 9 digits */
+              minLength='14'
+              maxLength='14'
               autoComplete='off'
             />
           </div>

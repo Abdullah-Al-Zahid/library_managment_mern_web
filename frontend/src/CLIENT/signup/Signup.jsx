@@ -163,16 +163,16 @@ const Signup = () => {
           <label htmlFor='phonefield'>Phone No. : </label>
           <input
             type='text'
-            placeholder='e.g. 98...'
+            placeholder='e.g. +8801XXXXXXXXX'
             id='phonefield'
             value={textField.phone}
             onChange={HandleOnChange}
             name='phone'
             autoComplete='off'
             required
-            pattern='9\d{9}'
-            minLength='10'
-            maxLength='10'
+            pattern='\+8801\d{9}' /* Enforce +8801 followed by 9 digits */
+            minLength='14'
+            maxLength='14'
           />
 
           <div className='password-main-div'>

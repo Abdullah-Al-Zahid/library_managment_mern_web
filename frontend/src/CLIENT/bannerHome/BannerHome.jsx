@@ -17,9 +17,10 @@ const BannerHome = () => {
                 src={image}
                 alt='First slide'
               />
-              <Carousel.Caption>
-                <h3 className='text-outline-h'>{heading}</h3>
-                <p className='text-outline-p'>{paragraph}</p>
+              <Carousel.Caption data-aos="fade-right" data-aos-duration="1000">
+                <h3 className='text-outline-h' data-aos="fade-right" data-aos-delay="200">{heading}</h3>
+                <p className='text-outline-p' data-aos="fade-right" data-aos-delay="400">{paragraph}</p>
+                <button className='btn btn-primary btn-lg mt-3' data-aos="zoom-in" data-aos-delay="600">Explore Books</button>
               </Carousel.Caption>
             </Carousel.Item>
           )
